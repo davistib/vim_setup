@@ -53,14 +53,18 @@ if [ ! $(vim --version | grep -o +python) ]; then
 fi
 # ------------------------------------------
 
+cp .vimrc ~$HOME/
+cd $HOME
+
 # install Vundle for plugin management
 echo "Installing Vundle Plugin manager..."
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-cp .vimrc ~$HOME/
+if [ -d .vim/bundle/Vundle.vim ]; then
+    echo "Looks like you aready have Vundle...skipping."
+else
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 
 # install plugins in .vimrc
-cd $HOME
 echo "Installing VIM plugins..."
 vim -c 'PluginInstall' -c 'qa!'
 
