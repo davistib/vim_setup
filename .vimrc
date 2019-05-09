@@ -153,7 +153,20 @@ set laststatus=2
 " ./install.sh
 " cd ..
 " rm -rf fonts
-                                                                                
+
+" auto-pairs for parenthesis and such
+Plugin 'jiangmiao/auto-pairs'
+
+" block comments
+Plugin 'scrooloose/nerdcommenter'
+" use like \cc to block comment out a visual block or current line
+" see https://github.com/scrooloose/nerdcommenter for help
+
+" surround text
+Plugin 'tpope/vim-surround'
+" e.g., use cd"' to change from double quote to single quote  
+" e.g., use ds" to delete quotes from surrounding text
+
 " ...add more plugins here 
                                                                                 
 " All of your Plugins must be added before the following line                   
