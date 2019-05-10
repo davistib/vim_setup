@@ -66,7 +66,7 @@ if [ -e $HOME/.vimrc ]; then
         mv $HOME/.vimrc $HOME/.vimrc.old.$indp1
     else
         echo "Moving .vimrc to .vimrc.old.1"
-        mv .vimrc .vimrc.old.1
+        mv $HOME/.vimrc $HOME/.vimrc.old.1
     fi
 fi
 

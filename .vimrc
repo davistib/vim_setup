@@ -159,6 +159,8 @@ Plugin 'jiangmiao/auto-pairs'
 
 " block comments
 Plugin 'scrooloose/nerdcommenter'
+let g:NERDDefaultAlign='left'
+let g:NERDTrimTrailingWhitespace=1
 " use like \cc to block comment out a visual block or current line
 " see https://github.com/scrooloose/nerdcommenter for help
 
