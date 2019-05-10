@@ -53,7 +53,24 @@ if [ ! $(vim --version | grep -o +python) ]; then
 fi
 # ------------------------------------------
 
-cp .vimrc ~$HOME/
+# check for existing .vimrc file and copy over
+if [ -e $HOME/.vimrc ]; then
+    echo "Detected existing .vimrc file."
+    # check for old .vimrc files
+    if ls $HOME/.vimrc.old.* 1> /dev/null 2>&1; then
+        # get index of last .vimrc.old.*
+        vf=$(ls -l $HOME/.vimrc.old.* | tail -1 | awk -F ' ' '{print $(NF)}')
+        ind=$(echo $vf | awk -F '.' '{print $(NF)}')
+        indp1=$(expr $ind + 1)
+        echo "Moving .vimrc to .vimrc.old.$indp1"
+        mv $HOME/.vimrc $HOME/.vimrc.old.$indp1
+    else
+        echo "Moving .vimrc to .vimrc.old.1"
+        mv .vimrc .vimrc.old.1
+    fi
+fi
+
+cp .vimrc $HOME/
 cd $HOME
 
 # install Vundle for plugin management
@@ -68,22 +85,22 @@ fi
 echo "Installing VIM plugins..."
 vim -c 'PluginInstall' -c 'qa!'
 
-# install YouCompleteMe
-if [ "$ycm" = true ]; then
-    echo "Installing YouCompleteMe...\n"
-    /usr/bin/python  ~/.vim/bundle/YouCompleteMe/install.py
-fi
-
-# install powerline fonts
-echo "Installing powerline fonts..."
-git clone https://github.com/powerline/fonts.git --depth=1                    
-cd fonts                                                                      
-./install.sh                                                                  
-cd ..                                                                         
-rm -rf fonts
-echo "New fonts installed for powerline status bar."
-echo "To enable, select for containing 'for Powerline' from terminal preferences."
-echo "I recomend DejaVu Sans Mono for Powerline."
+## install YouCompleteMe
+#if [ "$ycm" = true ]; then
+#    echo "Installing YouCompleteMe...\n"
+#    /usr/bin/python  ~/.vim/bundle/YouCompleteMe/install.py
+#fi
+#
+## install powerline fonts
+#echo "Installing powerline fonts..."
+#git clone https://github.com/powerline/fonts.git --depth=1                    
+#cd fonts                                                                      
+#./install.sh                                                                  
+#cd ..                                                                         
+#rm -rf fonts
+#echo "New fonts installed for powerline status bar."
+#echo "To enable, select for containing 'for Powerline' from terminal preferences."
+#echo "I recomend DejaVu Sans Mono for Powerline."
 
 cd -
 
