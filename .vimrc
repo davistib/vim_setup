@@ -17,6 +17,9 @@ syntax on
 " dark background
 set bg=dark
 
+" remap leader to something more convenient (\) is default
+let mapleader = ";"
+
 " default tabs and such
 set tabstop=4
 set shiftwidth=4
