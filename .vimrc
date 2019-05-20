@@ -17,6 +17,9 @@ syntax on
 " dark background
 set bg=dark
 
+" remap leader to something more convenient (\) is default
+let mapleader = ";"
+
 " default tabs and such
 set tabstop=4
 set shiftwidth=4
@@ -182,6 +185,15 @@ Plugin 'ntpeters/vim-better-whitespace'
 "  :ToggelWhitespace
 " remove bad white space with
 "  :StripWhitespace
+
+"" A powerline alternative - powerline seems slow?
+"Plugin 'vim-airline/vim-airline'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
+"Plugin 'vim-airline/vim-airline-themes'
+"let g:airline_theme='powerlineish'
+
+
 " ...add more plugins here
 
 " All of your Plugins must be added before the following line
