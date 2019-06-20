@@ -86,6 +86,20 @@ au BufNewFile,BufRead *.tcl.*
     \ set autoindent |
     \ set fileformat=unix
 
+" fortran indentation and such
+au BufNewFile,BufRead *.f90
+    \ let fortran_free_source=1 |
+    \ let fortran_have_tabs=1 |
+    \ let fortran_more_precise=1 |
+    \ let fortran_do_enddo |
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
 " flag bad white space - comment if you don't like it
 "highlight BadWhitespace ctermbg=red guibg=darkred
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
