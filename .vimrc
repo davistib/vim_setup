@@ -92,9 +92,9 @@ au BufNewFile,BufRead *.f90
     \ let fortran_have_tabs=1 |
     \ let fortran_more_precise=1 |
     \ let fortran_do_enddo=1 |
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
+    \ set tabstop=3 |
+    \ set softtabstop=3 |
+    \ set shiftwidth=3 |
     \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
