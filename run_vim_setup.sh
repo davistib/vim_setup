@@ -2,8 +2,8 @@
 # ---------------------------------------------------------------------------
 # Setup/Installer for .vimrc and desired plugins
 #
-# NOTE: If you are running this setup script on a machine through an ssh 
-#       connection, you can comment out the powerline font install at the 
+# NOTE: If you are running this setup script on a machine through an ssh
+#       connection, you can comment out the powerline font install at the
 #       bottom of this script
 #
 # tbd. 05.08.2019
@@ -93,10 +93,10 @@ vim -c 'PluginInstall' -c 'qa!'
 #
 ## install powerline fonts
 #echo "Installing powerline fonts..."
-#git clone https://github.com/powerline/fonts.git --depth=1                    
-#cd fonts                                                                      
-#./install.sh                                                                  
-#cd ..                                                                         
+#git clone https://github.com/powerline/fonts.git --depth=1
+#cd fonts
+#./install.sh
+#cd ..
 #rm -rf fonts
 #echo "New fonts installed for powerline status bar."
 #echo "To enable, select for containing 'for Powerline' from terminal preferences."
